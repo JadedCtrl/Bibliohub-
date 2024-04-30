@@ -1,5 +1,6 @@
 <?php
-// Create connection
+$title = "Book Log";
+include("lib/header.php");
 require_once('lib/db.php');
 
 // Select data from Books table
