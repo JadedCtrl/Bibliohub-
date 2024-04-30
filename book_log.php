@@ -8,15 +8,15 @@ $result = $conn->query($sql);
 
 // Output data of each row
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["ISBN"] . "</td>";
-        echo "<td>" . $row["Title"] . "</td>";
-        echo "<td>" . $row["Author"] . "</td>";
-        echo "<td>" . $row["Genre"] . "</td>";
-        echo "</tr>";
-    }
+	while($row = $result->fetch_assoc()) {
+		echo "<tr>";
+		echo "<td>" . $row["ISBN"] . "</td>";
+		echo "<td>" . $row["Title"] . "</td>";
+		echo "<td>" . $row["Author"] . "</td>";
+		echo "<td>" . $row["Genre"] . "</td>";
+		echo "</tr>";
+	}
 } else {
-    echo "<tr><td colspan='4'>0 results</td></tr>";
+	echo "<tr><td colspan='4'>0 results</td></tr>";
 }
 $conn->close();
