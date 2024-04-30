@@ -89,7 +89,7 @@ include("lib/header.php");
 		<th>TransactionType</th>
 		<th>TransactionDate</th>
 		<th>DueDate</th>
-		<th>State</th>
+		<th>Status</th>
 	</tr>
 	<?php
 	// Select data from Transactions table
@@ -106,7 +106,7 @@ include("lib/header.php");
 			echo "<td>" . $row["TransactionType"] . "</td>";
 			echo "<td>" . $row["TransactionDate"] . "</td>";
 			echo "<td>" . $row["DueDate"] . "</td>";
-			echo "<td>" . $row["State"] . "</td>";
+			echo "<td>" . $row["Status"] . "</td>";
 			echo "</tr>";
 		}
 	} else {

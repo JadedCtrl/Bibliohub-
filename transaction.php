@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($transactionType == 1) {
 		// Borrow transaction: Remove ISBN from Inventory
 		$sql_inventory = "DELETE FROM Inventory WHERE ISBN = '$isbn'";
-		$transactionState = 0;
+		$transactionStatus = 0;
 	} elseif ($transactionType == 2) {
 		// Return transaction: Add ISBN to Inventory
 		$sql_inventory = "INSERT INTO Inventory (ISBN, TransactionID) VALUES ('$isbn','$transactionID')";
-		$transactionState = 1;
+		$transactionStatus = 1;
 	} else {
 		// Invalid transaction type
 		echo "Invalid transaction type";
@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	// Insert into Transactions table
-	$sql_transactions = "INSERT INTO Transactions (UserID, InventoryID, TransactionType, TransactionDate, DueDate, State)
-       VALUES ($userID, $inventoryID, '$transactionType', NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY), $transactionState)";
+	$sql_transactions = "INSERT INTO Transactions (UserID, InventoryID, TransactionType, TransactionDate, DueDate, Status)
+       VALUES ($userID, $inventoryID, '$transactionType', NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY), $transactionStatus)";
 	echo "Transaction Successful";
 	if ($conn->query($sql_transactions) !== TRUE) {
 		echo "Error: " . $sql_transactions . "<br>" . $conn->error;
