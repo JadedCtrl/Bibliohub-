@@ -7,6 +7,7 @@ require_once('lib/db.php');
 $sql = "SELECT * FROM Books";
 $result = $conn->query($sql);
 
+echo("<table>");
 // Output data of each row
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
@@ -20,4 +21,5 @@ if ($result->num_rows > 0) {
 } else {
 	echo "<tr><td colspan='4'>0 results</td></tr>";
 }
+echo("</table>");
 $conn->close();
