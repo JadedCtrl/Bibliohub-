@@ -69,19 +69,8 @@
         <th>Event Description</th>
     </tr>
     <?php
-    // Database connection parameters
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require_once('lib/db.php');
 
     // Select data from Events table
     $sql = "SELECT * FROM Events";

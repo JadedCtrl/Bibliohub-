@@ -1,23 +1,12 @@
 <?php
+
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $userIdToDelete = $_POST["userIdToDelete"];
 
-    // Perform database deletion
-    // Modify this section to delete data from your Users table
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require_once('lib/db.php');
 
     // SQL query to delete user
     $sql = "DELETE FROM Users WHERE UserID='$userIdToDelete'";

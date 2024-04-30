@@ -93,17 +93,8 @@
         <th>Genre</th>
     </tr>
     <?php
-    // Establish database connection
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    // Create connection
+    require_once('lib/db.php');
 
     // Select data from Books table
     $sql = "SELECT * FROM Books";
@@ -122,7 +113,6 @@
     } else {
         echo "<tr><td colspan='4'>0 results</td></tr>";
     }
-    $conn->close();
     ?>
 </table>
 <h2>Transaction Log</h2>
@@ -137,18 +127,6 @@
         <th>State</th>
     </tr>
     <?php
-    // Establish database connection
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     // Select data from Transactions table
     $sql = "SELECT * FROM Transactions";
     $result = $conn->query($sql);
@@ -169,7 +147,6 @@
     } else {
         echo "<tr><td colspan='7'>0 results</td></tr>";
     }
-    $conn->close();
     ?>
 </table>
 <h2>Inventory Log</h2>
@@ -180,18 +157,6 @@
         <th>TransactionID</th>
     </tr>
     <?php
-    // Establish database connection
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     // Select data from Inventory table
     $sql = "SELECT * FROM Inventory";
     $result = $conn->query($sql);

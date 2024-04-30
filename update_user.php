@@ -10,19 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newPassword = $_POST["newPassword"];
 
     // Perform database update
-    // Modify this section to update data in your Users table
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require_once('lib/db.php');
 
     // SQL query to update user
     $sql = "UPDATE Users

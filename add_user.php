@@ -9,20 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = $_POST["address"];
     $password = $_POST["password"];
 
-    // Perform database insertion
-    // Modify this section to insert data into your Users table
-    $servername = "localhost";
-    $username = "veom-mysql";
-    $password = "nemade777";
-    $dbname = "library";
-
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require_once('lib/db.php');
 
     // SQL query to insert user
     $sql = "INSERT INTO Users (UserID, Role, Name, Email, Address, Password) VALUES ('$userId', '$role', '$name', '$email', '$address', '$password')";
