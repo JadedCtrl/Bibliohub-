@@ -160,8 +160,8 @@ include("lib/header.php");
 	 var isbnInput = document.getElementById('isbn');
 	 var isbnError = document.getElementById('isbnError');
 
-	 if (isbnInput.value.length !== 9) {
-		 isbnError.textContent = "ISBN must be 9 digits long";
+	 if (isbnInput.value.length !== 13) {
+		 isbnError.textContent = "ISBN must be 13 digits long";
 		 event.preventDefault(); // Prevent form submission
 	 } else {
 		 isbnError.textContent = ""; // Clear error message if ISBN is valid
@@ -173,8 +173,8 @@ include("lib/header.php");
 	 var isbnToUpdateInput = document.getElementById('isbnToUpdate');
 	 var isbnToUpdateError = document.getElementById('isbnToUpdateError');
 
-	 if (isbnToUpdateInput.value.length !== 9) {
-		 isbnToUpdateError.textContent = "ISBN must be 9 digits long";
+	 if (isbnToUpdateInput.value.length !== 13) {
+		 isbnToUpdateError.textContent = "ISBN must be 13 digits long";
 		 event.preventDefault(); // Prevent form submission
 	 } else {
 		 isbnToUpdateError.textContent = ""; // Clear error message if ISBN is valid
@@ -186,8 +186,8 @@ include("lib/header.php");
 	 var isbnToDeleteInput = document.getElementById('isbnToDelete');
 	 var isbnToDeleteError = document.getElementById('isbnToDeleteError');
 
-	 if (isbnToDeleteInput.value.length !== 9) {
-		 isbnToDeleteError.textContent = "ISBN must be 9 digits long";
+	 if (isbnToDeleteInput.value.length !== 13) {
+		 isbnToDeleteError.textContent = "ISBN must be 13 digits long";
 		 event.preventDefault(); // Prevent form submission
 	 } else {
 		 isbnToDeleteError.textContent = ""; // Clear error message if ISBN is valid
